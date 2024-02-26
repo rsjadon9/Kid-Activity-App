@@ -16,7 +16,6 @@ import { Kid }  from "../models/Kid.js"
 
  router.get('/viewKid' , async(req,res) =>{
   const kidsFromDb = await Kid.find({});
-  console.log(kidsFromDb);
   res.status(200).send(kidsFromDb);
  });
 

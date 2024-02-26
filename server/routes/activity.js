@@ -17,8 +17,7 @@ import { Activity }  from "../models/Activity.js"
 
  router.get('/viewActivity' , async(req,res) =>{
     const activityFromDB = await Activity.find({});
-    console.log(activityFromDB);    
-    res.status(200).send(Activity.find());
+    res.status(200).send(activityFromDB);
    });
   
 export {router as ActivityRouter}
