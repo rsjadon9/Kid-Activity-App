@@ -14,7 +14,7 @@ const AddKid = () => {
   //form handler
   const handleSubmit = async (values) => {
     try {
-      const res = await axios.post('http://localhost:3001/kid/add', {name, gender,dateOfBirth})
+      const res = await axios.post('http://localhost:3001/kid/addKid', {name, gender,dateOfBirth})
       if (res.data.success) {
         message.success("New Kid Added !");
       } else {        
@@ -34,7 +34,7 @@ const AddKid = () => {
         <br></br>
         <div className='form'>
           <label htmlFor='Name'>Name</label>
-          <input type="text" placeholder='Enter Name' onChange={(e)=>setUsername(e.target.value)}/>   
+          <input type="text" placeholder='Enter Name' onChange={(e)=>setName(e.target.value)}/>   
       </div>
       <div className='form'>
           <label htmlFor='gender'>Gender</label>
