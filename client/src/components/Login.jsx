@@ -13,7 +13,8 @@ const Login = () => {
   return (
     <div className='login'>
       <div className='login-container'>
-        <h2>Login To Manager Kids Activity</h2>
+        <h2>Login To Manage Kids Activity</h2>
+        <br></br>
         <div className='form'>
           <label htmlFor='username'>Username</label>
           <input type="text" placeholder='Enter UserName' onChange={(e)=>setUsername(e.target.value)}/>   
