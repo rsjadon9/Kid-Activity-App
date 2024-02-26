@@ -12,7 +12,6 @@ const Login = () => {
   //form handler
   const handleSubmit = async (values) => {
     try {
-      console.log({username, password});
       const res = await axios.post('http://localhost:3001/user/login', {username, password})
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);

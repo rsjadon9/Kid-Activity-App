@@ -4,7 +4,7 @@ import { Form, Input, message } from "antd";
 import '../styles/Login.css'
 import axios from 'axios'
 
-const UserSignup = () => {
+const AddKid = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
@@ -55,4 +55,4 @@ const UserSignup = () => {
   )
 }
 
-export default UserSignup
+export default AddKid
