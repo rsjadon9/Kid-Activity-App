@@ -6,6 +6,8 @@ import Login from './components/Login'
 import UserSignup from './components/UserSignup'
 import AddKid from './components/AddKid'
 import Home from './components/Home'
+import AddActivity from "./components/AddActivity"
+
 
 function App() {
 
@@ -20,7 +22,7 @@ function App() {
         <Route path="/newUserSignup" element={<UserSignup/>}></Route>
         <Route path="/addKid" element={<AddKid/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
-
+        
       </Routes>
       </BrowserRouter>
     </>

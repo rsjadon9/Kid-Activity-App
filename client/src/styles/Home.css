@@ -1,25 +1,42 @@
-.dashboard {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 20px;
-    height:80vh;
-    background-color: #FF8000;
-  }
-  
-  .dashboard-container {
-    border: 1px solid black;
-    border-radius: 7px;
-    padding: 10px;
-    width:200px;
-    height:70px;
-    margin-top: 40px;
-    background-color: rgba(255, 165, 0, 0.5);
-    text-align: center;
+/* Home.css */
 
-  }
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  background-color: orange;
+  height: 90vh;;
+  align-items: center;
   
-  .dashboard-container h2 {
-    margin: 0;
-  }
   
+}
+
+.dashboard-container {
+  border: 1px solid #ddd;
+  border-radius: 7px;
+margin-top: 40px;
+  padding: 20px;
+  cursor: pointer;
+  width: 200px;
+  height: 70px;
+  text-align: center;
+}
+
+.dashboard-container:hover {
+  background-color: green;
+}
+
+.dashboard-container h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.dashboard-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dashboard-container li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
