@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import LandingPage from "./components/LandingPage"
 import MenuBar from "./components/MenuBar"
-import Activity from './components/Activity'
+import Activity from './components/AddActivity'
 import Login from './components/Login'
 import UserSignup from './components/UserSignup'
 import AddKid from './components/AddKid'
@@ -15,11 +15,8 @@ function App() {
       <MenuBar/>
       <Routes>
         <Route path="/" element={<LandingPage/>}></Route>
-
-        <Route path="/activity" element={<Activity/>}></Route>
-
+        <Route path="/addActivity" element={<Activity/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
-
         <Route path="/newUserSignup" element={<UserSignup/>}></Route>
         <Route path="/addKid" element={<AddKid/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
