@@ -1,13 +1,14 @@
 import  express  from "express";
-import {Users} from "../models/Users"
-import { Jwt } from "jsonwebtoken";
+import { Users }  from "../models/Users.js"
+import jwt from "jsonwebtoken";
 import bcrypt from  "bcrypt";
  const router = express.Router();
 
- router.post('/login' , async(req,res) =>{
+ router.post('/tryLogin' , async(req,res) =>{
+    console.log(req.username)
     const username = req.body.username;
     const password =    req.body.password;
-    const existingUserInfo = await userModel.findOne({ username: username });
+    const existingUserInfo = await Users.findOne({ username: username });
     if (!existingUserInfo) {
       return res
         .status(404)
@@ -28,4 +29,4 @@ import bcrypt from  "bcrypt";
 
  })
 
- 
+export {router as LoginRouter}

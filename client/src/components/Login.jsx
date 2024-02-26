@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 import { Form, Input, message } from "antd";
 import '../styles/Login.css'
 import axios from 'axios'
@@ -10,14 +11,15 @@ const Login = () => {
   //form handler
   const handleSubmit = async (values) => {
     try {
-      const res = await axios.post("/login", values);
-      window.location.reload();
+      console.log({username, password});
+      const res = await axios.post('http://localhost:5173/logon/tryLogin', {username, password})
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
         message.success("Login Successfully");
-        navigate("/");
+        navigate('/dashboard')
       } else {
         message.error(res.data.message);
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
@@ -38,7 +40,7 @@ const Login = () => {
           <label htmlFor='username'>Password</label>
           <input type="password" placeholder='Enter password'onChange={(e)=>setPassword(e.target.value)}/>   
       </div>
-      <button className='btn-login'onClick={handleSubmit}>Login</button>
+      <button className='btn-login' onClick={handleSubmit}>Login</button>
       </div>
     </div>
   )

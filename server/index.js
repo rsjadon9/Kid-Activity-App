@@ -4,6 +4,8 @@ import cors from 'cors';
 import   "./db.js";
 import cookieParser from "cookie-parser";
 
+import { LoginRouter } from './routes/auth.js'
+
 const app = express();
 
 app.use(express.json)
@@ -12,10 +14,9 @@ app.use(cookieParser())
 
 dotenv.config()
 
-
 app.listen(process.env.PORT,() =>{
     console.log("Server is Running");
 })
 
 //add routes
-app.use("/login", require("./routes/auth"));
+app.use("/logon", LoginRouter);
