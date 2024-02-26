@@ -2,7 +2,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import LandingPage from "./components/LandingPage"
 import MenuBar from "./components/MenuBar"
 import Activity from './components/Activity'
-import  Login from './components/Login'
+import Login from './components/Login'
 import Home from './components/Home'
 
 function App() {
