@@ -16,7 +16,9 @@ import { Kid }  from "../models/Kid.js"
 
  router.get('/viewKid' , async(req,res) =>{
   const kidsFromDb = await Kid.find({});
+  console.log("after viewKid from Mongo")
   res.status(200).send(kidsFromDb);
+  console.log("after viewKid")
  });
 
 export {router as KidRouter}
