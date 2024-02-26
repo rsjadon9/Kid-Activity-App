@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Form, Input, message } from "antd";
 import '../styles/Login.css'
 import axios from 'axios'
 
@@ -6,10 +7,24 @@ const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleSubmit = () =>{
-        e.preventDefault();
+  //form handler
+  const handleSubmit = async (values) => {
+    try {
+      const res = await axios.post("/login", values);
+      window.location.reload();
+      if (res.data.success) {
+        localStorage.setItem("token", res.data.token);
+        message.success("Login Successfully");
+        navigate("/");
+      } else {
+        message.error(res.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      message.error("Unexpected Error !");
+    }
+  };
 
-  }
   return (
     <div className='login'>
       <div className='login-container'>

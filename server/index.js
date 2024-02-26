@@ -16,3 +16,6 @@ dotenv.config()
 app.listen(process.env.PORT,() =>{
     console.log("Server is Running");
 })
+
+//add routes
+app.use("/login", require("./routes/auth"));
