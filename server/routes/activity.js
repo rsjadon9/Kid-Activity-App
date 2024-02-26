@@ -14,4 +14,4 @@ import { Activity }  from "../models/Activity.js"
   res.status(201).send({ message: "New Activity Added Successfully !", success: true });
  });
 
-export {router as KidRouter}
+export {router as ActivityRouter}

@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 
 import { UserRouter } from './routes/user.js'
 import { KidRouter } from './routes/kid.js'
+import { ActivityRouter } from './routes/activity.js'
 
 const app = express()
 app.use(express.json())
@@ -19,6 +20,7 @@ dotenv.config()
 //add routes
 app.use("/user", UserRouter);
 app.use("/kid", KidRouter);
+app.use("/activity", ActivityRouter);
 
 app.listen(process.env.PORT,() =>{
     console.log("Server is Running");
