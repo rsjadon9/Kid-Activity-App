@@ -46,11 +46,10 @@ const Home = () => {
         <ul>
           {
             activityInfo.map((r) =>
-            <li key='{r}'>
+            <li key={r}>
               {r}
             </li>
           )}          
-          {activityInfo}
         </ul>
       </div>
       <div className='dashboard-container' onClick={loadKidInfo}>
@@ -58,11 +57,10 @@ const Home = () => {
         <ul>
           {
             kidInfo.map((r) =>
-            <li key='{r}'>
+            <li key={r}>
               {r}
             </li>
           )}          
-          {activityInfo}
         </ul> 
       </div>
     </div>
