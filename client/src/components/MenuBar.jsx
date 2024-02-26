@@ -11,9 +11,9 @@ const MenuBar = () => {
 <div className='right-menu'>
 <Link to ="/newUserSignup" className='menubar-link'>New User Signup</Link>
 <Link to ="/login" className='menubar-link'>Login</Link>
-<Link to ="/home" className='menubar-link'>My Dashboard</Link>
 <Link to ="/addKid" className='menubar-link'>Add Kid</Link>
 <Link to ="/addActivity" className='menubar-link'>Add Activity</Link>
+<Link to ="/home" className='menubar-link'>My Dashboard</Link>
 </div>
     </nav>
   )
