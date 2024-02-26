@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose  from "mongoose";
 import dotenv from 'dotenv';
 dotenv.config()
 
@@ -14,4 +14,4 @@ const Connection = async() =>{
 
 }
 
-export {Connection}
+Connection()
