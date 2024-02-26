@@ -14,4 +14,10 @@ import { Kid }  from "../models/Kid.js"
   res.status(201).send({ message: "New Kid Added Successfully !", success: true });
  });
 
+ router.get('/viewKid' , async(req,res) =>{
+  const kidsFromDb = await Kid.find({});
+  console.log(kidsFromDb);
+  res.status(200).send(kidsFromDb);
+ });
+
 export {router as KidRouter}

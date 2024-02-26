@@ -15,4 +15,10 @@ import { Activity }  from "../models/Activity.js"
   res.status(201).send({ message: "New Activity Added Successfully !", success: true });
  });
 
+ router.get('/viewActivity' , async(req,res) =>{
+    const activityFromDB = await Activity.find({});
+    console.log(activityFromDB);    
+    res.status(200).send(Activity.find());
+   });
+  
 export {router as ActivityRouter}
