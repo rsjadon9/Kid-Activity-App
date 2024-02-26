@@ -40,7 +40,7 @@ const AddActivity = () => {
       </div>
       <div className='form'>
           <label htmlFor='gender'>Kid Name</label>
-          <input type="text" placeholder='Enter Kid Name' onChange={(e)=>setGender(e.target.value)}/>   
+          <input type="text" placeholder='Enter Kid Name' onChange={(e)=>setKidName(e.target.value)}/>   
       </div>
       <div className='form'>
           <label htmlFor='dayOfActivity'>Day Of Acitivity</label>
@@ -54,7 +54,7 @@ const AddActivity = () => {
           <label htmlFor='paidIndicator'>Paid Indicator</label>
           <input type="text" placeholder='Enter Yes for Paid Activity' onChange={(e)=>setPaidIndicator(e.target.value)}/>   
       </div>                        
-      <button className='btn-login' onClick={handleSubmit}>Add Kid</button>
+      <button className='btn-login' onClick={handleSubmit}>Add Activity</button>
       </div>
     </div>
   )

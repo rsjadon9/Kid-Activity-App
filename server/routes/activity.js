@@ -3,13 +3,14 @@ import { Activity }  from "../models/Activity.js"
  const router = express.Router();
 
  router.post('/addActivity' , async(req,res) =>{
-  const activityName = req.body.name;
-  const kidName = req.body.name;
-  const dayOfActivity = req.body.name;
-  const recurringIndicator = req.body.name;
-  const paidIndicator = req.body.name;
+  const activityName = req.body.activityName;
+  const kidName = req.body.kidName;
+  const dayOfActivity = req.body.dayOfActivity;
+  const recurringIndicator = req.body.recurringIndicator;
+  const paidIndicator = req.body.paidIndicator;
 
   const newActivity = new Activity({activityName, kidName,dayOfActivity,recurringIndicator,paidIndicator});
+  console.log(newActivity)
   await newActivity.save();
   res.status(201).send({ message: "New Activity Added Successfully !", success: true });
  });
