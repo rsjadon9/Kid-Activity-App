@@ -7,17 +7,18 @@ import axios from 'axios'
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   //form handler
   const handleSubmit = async (values) => {
     try {
       console.log({username, password});
-      const res = await axios.post('http://localhost:5173/logon/tryLogin', {username, password})
+      const res = await axios.post('http://localhost:3001/auth/login', {username, password})
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
         message.success("Login Successfully");
         navigate('/dashboard')
-      } else {
+      } else {        
         message.error(res.data.message);
         navigate("/");
       }
