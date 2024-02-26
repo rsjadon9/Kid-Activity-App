@@ -4,6 +4,7 @@ import MenuBar from "./components/MenuBar"
 import Activity from './components/Activity'
 import Login from './components/Login'
 import UserSignup from './components/UserSignup'
+import AddKid from './components/AddKid'
 import Home from './components/Home'
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Route path="/login" element={<Login/>}></Route>
 
         <Route path="/newUserSignup" element={<UserSignup/>}></Route>
-        
+        <Route path="/addKid" element={<AddKid/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
 
       </Routes>

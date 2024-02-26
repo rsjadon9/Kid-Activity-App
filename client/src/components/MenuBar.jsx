@@ -12,8 +12,8 @@ const MenuBar = () => {
 <Link to ="/newUserSignup" className='menubar-link'>New User Signup</Link>
 <Link to ="/login" className='menubar-link'>Login</Link>
 <Link to ="/home" className='menubar-link'>My Dashboard</Link>
-<Link to ="/addkid" className='menubar-link'>Add Kid</Link>
-<Link to ="/addactivity" className='menubar-link'>Add Activity</Link>
+<Link to ="/addKid" className='menubar-link'>Add Kid</Link>
+<Link to ="/addActivity" className='menubar-link'>Add Activity</Link>
 </div>
     </nav>
   )

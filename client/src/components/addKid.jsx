@@ -5,23 +5,22 @@ import '../styles/Login.css'
 import axios from 'axios'
 
 const AddKid = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [email, setEmail] = useState('')
-  const [cell, setCell] = useState('')
+  const [name, setName] = useState('')
+  const [gender, setGender] = useState('')
+  const [dateOfBirth, setDateOfBirth] = useState('')
+
   const navigate = useNavigate()
 
   //form handler
   const handleSubmit = async (values) => {
     try {
-      const res = await axios.post('http://localhost:3001/user/signup', {username, password,email,cell})
+      const res = await axios.post('http://localhost:3001/kid/add', {name, gender,dateOfBirth})
       if (res.data.success) {
-        message.success("Signup Successful !");
-        navigate('/login')
+        message.success("New Kid Added !");
       } else {        
         message.error(res.data.message);
-        navigate("/");
       }
+      navigate('/')
     } catch (error) {
       console.log(error);
       message.error("Unexpected Error !");
@@ -31,25 +30,21 @@ const AddKid = () => {
   return (
     <div className='login'>
       <div className='login-container'>
-        <h2>New User Signup</h2>
+        <h2>Add New Kid</h2>
         <br></br>
         <div className='form'>
-          <label htmlFor='username'>Username</label>
-          <input type="text" placeholder='Enter UserName' onChange={(e)=>setUsername(e.target.value)}/>   
+          <label htmlFor='Name'>Name</label>
+          <input type="text" placeholder='Enter Name' onChange={(e)=>setUsername(e.target.value)}/>   
       </div>
       <div className='form'>
-          <label htmlFor='username'>Password</label>
-          <input type="password" placeholder='Enter password'onChange={(e)=>setPassword(e.target.value)}/>   
+          <label htmlFor='gender'>Gender</label>
+          <input type="text" placeholder='Enter Gender' onChange={(e)=>setGender(e.target.value)}/>   
       </div>
       <div className='form'>
-          <label htmlFor='username'>Email</label>
-          <input type="text" placeholder='Enter Email'onChange={(e)=>setEmail(e.target.value)}/>   
-      </div>
-      <div className='form'>
-          <label htmlFor='username'>Cell</label>
-          <input type="text" placeholder='Enter password'onChange={(e)=>setCell(e.target.value)}/>   
+          <label htmlFor='dateOfBirth'>Date Of Birth</label>
+          <input type="date" placeholder='Enter Date Of Birth' onChange={(e)=>setDateOfBirth(e.target.value)}/>   
       </div>            
-      <button className='btn-login' onClick={handleSubmit}>Signup</button>
+      <button className='btn-login' onClick={handleSubmit}>Add Kid</button>
       </div>
     </div>
   )
